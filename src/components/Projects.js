@@ -10,34 +10,46 @@ import TrackVisibility from "react-on-screen";
 export const Projects = () => {
   const projects = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "E-Commerce Platform",
+      description: "React & Node.js Full-Stack",
       imgUrl: projImg1,
+      websiteUrl: "https://my-ecommerce-app.vercel.app",
+      githubUrl: "https://github.com/yourusername/ecommerce-app",
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Task Management App",
+      description: "React & Firebase",
       imgUrl: projImg2,
+      websiteUrl: "https://task-manager-app.netlify.app",
+      githubUrl: "https://github.com/yourusername/task-manager",
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Weather Dashboard",
+      description: "JavaScript & APIs",
       imgUrl: projImg3,
+      websiteUrl: "https://weather-dashboard.vercel.app",
+      githubUrl: "https://github.com/yourusername/weather-app",
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Portfolio Website",
+      description: "React & Bootstrap",
       imgUrl: projImg1,
+      websiteUrl: "https://your-portfolio.vercel.app",
+      githubUrl: "https://github.com/yourusername/portfolio",
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Blog Platform",
+      description: "Next.js & MongoDB",
       imgUrl: projImg2,
+      websiteUrl: "https://my-blog-platform.vercel.app",
+      githubUrl: "https://github.com/yourusername/blog-platform",
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Social Media Clone",
+      description: "React & Express",
       imgUrl: projImg3,
+      websiteUrl: "https://social-app-clone.herokuapp.com",
+      githubUrl: "https://github.com/yourusername/social-app",
     },
   ];
 

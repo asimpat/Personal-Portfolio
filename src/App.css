@@ -517,6 +517,67 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   opacity: 1;
 }
 
+.proj-imgbx.clickable {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proj-imgbx.clickable:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  justify-content: center;
+}
+
+.project-link-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.project-link-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.live-btn {
+  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+}
+
+.live-btn:hover {
+  background: linear-gradient(90.21deg, #8a2d6a -5.91%, #3a25a0 111.58%);
+}
+
+.github-btn {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.github-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.project-link-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.project-link-btn:hover svg {
+  transform: scale(1.1);
+}
+
 .proj-txtx h4 {
   font-size: 30px;
   font-weight: 700;
