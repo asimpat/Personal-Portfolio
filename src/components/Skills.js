@@ -26,6 +26,33 @@ export const Skills = () => {
     },
   };
 
+   const carouselSettings = {
+     responsive: responsive,
+     infinite: true,
+     autoPlay: true,
+     autoPlaySpeed: 2000,
+     pauseOnHover: true,
+     showDots: false,
+     removeArrowOnDeviceType: ["tablet", "mobile"],
+     keyBoardControl: true,
+     customTransition: "transform 0.5s ease-in-out",
+     transitionDuration: 500,
+     shouldResetAutoplay: false,
+     rewind: false,
+     additionalTransfrom: 0,
+     arrows: true,
+     renderButtonGroupOutside: false,
+     renderDotsOutside: false,
+     centerMode: false,
+     containerClass: "carousel-container",
+     itemClass: "carousel-item-padding-40-px",
+     swipeable: true,
+     draggable: true,
+     partialVisible: false,
+     focusOnSelect: false,
+   };
+  
+
   return (
     <section className="skill" id="skills">
       <div className="container">
@@ -39,8 +66,11 @@ export const Skills = () => {
                 dummy text.
               </p>
               <Carousel
-                responsive={responsive}
-                infinite={true}
+                // responsive={responsive}
+                // infinite={true}
+                // autoPlay={true}
+                // autoPlaySpeed={3000}
+                {...carouselSettings}
                 className="owl-carousel owl-theme skill-slider"
               >
                 <div className="item">
