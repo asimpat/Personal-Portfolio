@@ -1,28 +1,11 @@
 from django.db import models
 
 
-class SkillCategory(models.Model):
-    """Model for skill categories"""
-    name = models.CharField(max_length=100)
-    description = models.TextField(blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        verbose_name_plural = "Skill Categories"
-        ordering = ['name']
-
-    def __str__(self):
-        return self.name
-
-
 class Skill(models.Model):
     """Model for skills with percentage"""
     name = models.CharField(max_length=100)
     percentage = models.IntegerField(
         default=0, help_text="Skill proficiency percentage (0-100)")
-    category = models.ForeignKey(
-        SkillCategory, on_delete=models.CASCADE, related_name='skills')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -42,7 +25,6 @@ class Project(models.Model):
     github_url = models.URLField(blank=True, null=True)
     technologies = models.TextField(
         help_text="Comma-separated list of technologies")
-    is_featured = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
