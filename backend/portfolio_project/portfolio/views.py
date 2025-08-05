@@ -27,6 +27,20 @@ def get_skills(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
    
 
+@api_view(['PUT'])
+def update_skill(request, pk):
+    try:
+        skill = Skill.objects.get(pk=pk)
+    except Skill.DoesNotExist:
+        return Response({'error': 'Skill not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    serializer = SkillSerializer(skill, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+   
+
 @api_view(['GET', 'POST'])
 def get_projects(request):
    if request.method == 'GET':
