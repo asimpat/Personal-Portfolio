@@ -33,7 +33,7 @@ class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact
         fields = ['id', 'first_name', 'last_name', 'email', 'phone',
-                  'message', 'created_at', 'is_read']
+                  'message', 'created_at']
 
 
 class ResumeSerializer(serializers.ModelSerializer):
