@@ -90,7 +90,6 @@ class Contact(models.Model):
         return f"{self.first_name} {self.last_name} - {self.email}"
 
 
-
 class Resume(models.Model):
     """Model for resume file"""
     title = models.CharField(max_length=200, default="Resume")
