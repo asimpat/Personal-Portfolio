@@ -59,6 +59,7 @@ export const Skills = () => {
         <div className="row">
           <div className="col-12">
             <div className="skill-bx wow zoomIn">
+              
               <h2>Skills</h2>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
