@@ -16,6 +16,7 @@ class Skill(models.Model):
         return f"{self.name} ({self.percentage}%)"
 
 
+
 class Project(models.Model):
     """Model for portfolio projects"""
     title = models.CharField(max_length=200)
