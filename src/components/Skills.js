@@ -64,7 +64,7 @@ export const Skills = () => {
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry.<br></br> Lorem Ipsum has been the industry's standard
-                dummy text
+                dummy
               </p>
               <Carousel
                
