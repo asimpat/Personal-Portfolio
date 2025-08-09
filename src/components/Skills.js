@@ -67,10 +67,7 @@ export const Skills = () => {
                 dummy text.
               </p>
               <Carousel
-                // responsive={responsive}
-                // infinite={true}
-                // autoPlay={true}
-                // autoPlaySpeed={3000}
+               
                 {...carouselSettings}
                 className="owl-carousel owl-theme skill-slider"
               >
