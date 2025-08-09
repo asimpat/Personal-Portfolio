@@ -51,9 +51,8 @@ export const Skills = () => {
      partialVisible: false,
      focusOnSelect: false,
    };
-   
-  
 
+  
   return (
     <section className="skill" id="skills">
       <div className="container">
