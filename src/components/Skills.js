@@ -51,6 +51,7 @@ export const Skills = () => {
      partialVisible: false,
      focusOnSelect: false,
    };
+   
   
 
   return (
