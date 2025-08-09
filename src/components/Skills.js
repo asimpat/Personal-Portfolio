@@ -67,7 +67,7 @@ export const Skills = () => {
                 dummy
               </p>
               <Carousel
-                    {...carouselSettings}
+                  {...carouselSettings}
                 className="owl-carousel owl-theme skill-slider"
               >
                 <div className="item">
