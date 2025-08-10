@@ -1,7 +1,6 @@
 # urls.py
 
 from django.urls import path
-
 from .views import get_skills, get_projects, get_experience, contact_submission, download_resume, update_skill
 
 urlpatterns = [
