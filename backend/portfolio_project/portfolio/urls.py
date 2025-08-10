@@ -4,7 +4,6 @@ from django.urls import path
 
 from .views import get_skills, get_projects, get_experience, contact_submission, download_resume, update_skill
 
-
 urlpatterns = [
     path('skills/', get_skills, name='get_skills'),
     path('projects/', get_projects, name='projects'),
