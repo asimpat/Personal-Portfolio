@@ -76,7 +76,7 @@ class Experience(models.Model):
 
 
 class Contact(models.Model):
-    """Model for contact form submissions"""
+
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField()
