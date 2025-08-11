@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Skill(models.Model):
-    """Model for skills with percentage"""
+
     name = models.CharField(max_length=100)
     percentage = models.IntegerField(
         default=0, help_text="Skill proficiency percentage (0-100)")
@@ -18,7 +18,7 @@ class Skill(models.Model):
 
 
 class Project(models.Model):
-    """Model for portfolio projects"""
+  
     title = models.CharField(max_length=200)
     description = models.TextField()
     image = models.ImageField(upload_to='projects/', blank=True, null=True)
@@ -42,7 +42,7 @@ class Project(models.Model):
 
 
 class Experience(models.Model):
-    """Model for work experience"""
+
     title = models.CharField(max_length=200)
     company = models.CharField(max_length=200)
     description = models.TextField()
@@ -76,7 +76,7 @@ class Experience(models.Model):
 
 
 class Contact(models.Model):
-   
+    """Model for contact form submissions"""
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField()
@@ -92,7 +92,7 @@ class Contact(models.Model):
 
 
 class Resume(models.Model):
-    """Model for resume file"""
+ 
     title = models.CharField(max_length=200, default="Resume")
     file = models.FileField(upload_to='resumes/')
     is_active = models.BooleanField(default=True)
