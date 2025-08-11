@@ -64,7 +64,7 @@ class Experience(models.Model):
 
     @property
     def period_display(self):
-        """Return formatted period string"""
+      
         if self.is_current:
             return f"{self.start_year} - Present"
         return f"{self.start_year} - {self.end_year}"
