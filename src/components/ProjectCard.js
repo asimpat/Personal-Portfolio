@@ -28,6 +28,7 @@ export const ProjectCard = ({
         onClick={websiteUrl ? handleWebsiteClick : undefined}
         style={{ cursor: websiteUrl ? "pointer" : "default" }}
       >
+        
         <img src={imgUrl} alt={title} />
         <div className="proj-txtx">
           <h4>{title}</h4>
