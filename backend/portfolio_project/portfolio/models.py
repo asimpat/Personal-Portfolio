@@ -42,7 +42,7 @@ class Project(models.Model):
 
 
 class Experience(models.Model):
-    """Model for work experience"""
+
     title = models.CharField(max_length=200)
     company = models.CharField(max_length=200)
     description = models.TextField()
