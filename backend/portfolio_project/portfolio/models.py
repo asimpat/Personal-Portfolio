@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Skill(models.Model):
-    """Model for skills with percentage"""
+
     name = models.CharField(max_length=100)
     percentage = models.IntegerField(
         default=0, help_text="Skill proficiency percentage (0-100)")
