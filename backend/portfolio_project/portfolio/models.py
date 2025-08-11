@@ -92,7 +92,7 @@ class Contact(models.Model):
 
 
 class Resume(models.Model):
-    """Model for resume file"""
+ 
     title = models.CharField(max_length=200, default="Resume")
     file = models.FileField(upload_to='resumes/')
     is_active = models.BooleanField(default=True)
