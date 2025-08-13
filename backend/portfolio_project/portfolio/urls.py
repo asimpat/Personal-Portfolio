@@ -10,4 +10,5 @@ urlpatterns = [
     path('contacts/', contact_submission, name='contacts'),
     path('resumes/', download_resume, name='resumes'),
     path('skills/<int:pk>/', update_skill),
+    path('projects/<int:pk>/', update_skill),
 ]

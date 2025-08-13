@@ -55,6 +55,20 @@ def get_projects(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+@api_view(['PUT'])
+def update_project(request, pk):
+    try:
+        project = Project.objects.get(pk=pk)
+    except Project.DoesNotExist:
+        return Response({'error': 'project not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    serializer = ProjectSerializer(project, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
 @api_view(['GET', 'POST'])
 def get_experience(request):
    if request.method == 'GET':
@@ -64,7 +78,7 @@ def get_experience(request):
             is_current=current.lower() == 'true')
     else:
         experience = Experience.objects.all()
-        experience = Experience.objects.all()
+        # experience = Experience.objects.all()
         serializer = ExperienceSerializer(experience, many=True)
     return Response(serializer.data)
    elif request.method == 'POST':
@@ -72,6 +86,20 @@ def get_experience(request):
     if serializer.is_valid():
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['PUT'])
+def update_experience(request, pk):
+    try:
+        experience = Experience.objects.get(pk=pk)
+    except Experience.DoesNotExist:
+        return Response({'error': 'experience not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    serializer = ExperienceSerializer(experience, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
