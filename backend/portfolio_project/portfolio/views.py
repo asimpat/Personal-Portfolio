@@ -143,7 +143,7 @@ def resume_upload(request):
 
 @api_view(['GET'])
 def download_resume(request):
-    """Download the active resume file"""
+  
     resume = get_object_or_404(Resume, is_active=True)
 
     file_path = os.path.join(settings.MEDIA_ROOT, str(resume.file))
