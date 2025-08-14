@@ -89,7 +89,6 @@ WSGI_APPLICATION = 'portfolio_project.wsgi.application'
 
 
 # Database
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
