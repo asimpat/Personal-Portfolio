@@ -1,57 +1,20 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 export const Projects = () => {
-  const projects = [
-    {
-      title: "E-Commerce Platform",
-      description: "React & Node.js Full-Stack",
-      imgUrl: projImg1,
-      websiteUrl: "https://my-ecommerce-app.vercel.app",
-      githubUrl: "https://github.com/yourusername/ecommerce-app",
-    },
-    {
-      title: "Task Management App",
-      description: "React & Firebase",
-      imgUrl: projImg2,
-      websiteUrl: "https://task-manager-app.netlify.app",
-      githubUrl: "https://github.com/yourusername/task-manager",
-    },
-    {
-      title: "Weather Dashboard",
-      description: "JavaScript & APIs",
-      imgUrl: projImg3,
-      websiteUrl: "https://weather-dashboard.vercel.app",
-      githubUrl: "https://github.com/yourusername/weather-app",
-    },
-    {
-      title: "Portfolio Website",
-      description: "React & Bootstrap",
-      imgUrl: projImg1,
-      websiteUrl: "https://your-portfolio.vercel.app",
-      githubUrl: "https://github.com/yourusername/portfolio",
-    },
-    {
-      title: "Blog Platform",
-      description: "Next.js & MongoDB",
-      imgUrl: projImg2,
-      websiteUrl: "https://my-blog-platform.vercel.app",
-      githubUrl: "https://github.com/yourusername/blog-platform",
-    },
-    {
-      title: "Social Media Clone",
-      description: "React & Express",
-      imgUrl: projImg3,
-      websiteUrl: "https://social-app-clone.herokuapp.com",
-      githubUrl: "https://github.com/yourusername/social-app",
-    },
-  ];
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/projects/")
+      .then((res) => setProjects(res.data))
+      .catch((err) => console.error(err));
+  }, []);
 
   return (
     <section className="project" id="projects">
@@ -67,11 +30,8 @@ export const Projects = () => {
                 >
                   <h2>Projects</h2>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
+                    These are my featured projects, pulled directly from my
+                    backend.
                   </p>
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
                     <Nav
@@ -80,7 +40,7 @@ export const Projects = () => {
                       id="pills-tab"
                     >
                       <Nav.Item>
-                        <Nav.Link eventKey="first">Tab 1</Nav.Link>
+                        <Nav.Link eventKey="first">All Projects</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
                         <Nav.Link eventKey="second">Tab 2</Nav.Link>
@@ -97,28 +57,27 @@ export const Projects = () => {
                     >
                       <Tab.Pane eventKey="first">
                         <Row>
-                          {projects.map((project, index) => {
-                            return <ProjectCard key={index} {...project} />;
-                          })}
+                          {projects.length > 0 ? (
+                            projects.map((project) => (
+                              <ProjectCard
+                                key={project.id}
+                                title={project.title}
+                                description={project.description}
+                                imgUrl={`http://localhost:8000${project.image}`}
+                                websiteUrl={project.site_url}
+                                githubUrl={project.github_url}
+                              />
+                            ))
+                          ) : (
+                            <p>Loading projects...</p>
+                          )}
                         </Row>
                       </Tab.Pane>
-                      <Tab.Pane eventKey="section">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Cumque quam, quod neque provident velit, rem
-                          explicabo excepturi id illo molestiae blanditiis,
-                          eligendi dicta officiis asperiores delectus quasi
-                          inventore debitis quo.
-                        </p>
+                      <Tab.Pane eventKey="second">
+                        <p>Second tab content...</p>
                       </Tab.Pane>
                       <Tab.Pane eventKey="third">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Cumque quam, quod neque provident velit, rem
-                          explicabo excepturi id illo molestiae blanditiis,
-                          eligendi dicta officiis asperiores delectus quasi
-                          inventore debitis quo.
-                        </p>
+                        <p>Third tab content...</p>
                       </Tab.Pane>
                     </Tab.Content>
                   </Tab.Container>
@@ -132,7 +91,7 @@ export const Projects = () => {
         className="background-image-right"
         src={colorSharp2}
         alt="Background decoration"
-      ></img>
+      />
     </section>
   );
 };

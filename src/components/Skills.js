@@ -7,6 +7,8 @@ import meter1 from "../assets/img/meter1.svg";
 import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
 import colorSharp from "../assets/img/color-sharp.png";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
 export const Skills = () => {
   const [skills, setSkills] = useState([]);
@@ -73,12 +75,28 @@ export const Skills = () => {
               >
                 {skills.length > 0 ? (
                   skills.map((skill, index) => (
-                    <div className="item" key={index}>
-                      <img
-                        src={getMeterImage(skill)}
-                        alt={skill.name}
-                      />
-                      <h5>{skill.name}</h5>
+                    <div
+                      key={index}
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                      }}
+                    >
+                      <div style={{ width: 120, height: 120 }}>
+                        <CircularProgressbar
+                          value={skill.percentage}
+                          text={`${skill.percentage}%`}
+                          styles={buildStyles({
+                            textColor: "#fff",
+                            pathColor: "#a020f0",
+                            trailColor: "#333",
+                          })}
+                        />
+                      </div>
+                      <h5 style={{ marginTop: "10px", color: "#fff" }}>
+                        {skill.name}
+                      </h5>
                     </div>
                   ))
                 ) : (
