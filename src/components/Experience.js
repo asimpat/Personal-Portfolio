@@ -61,7 +61,7 @@ export const Experience = () => {
                     // Create a temporary link
                     const link = document.createElement("a");
                     link.href = "http://127.0.0.1:8000/api/resume/";
-                    link.setAttribute("download", "Asim's_Resume.pdf"); // You can name the file here
+                    link.setAttribute("download", "Asim's_Resume.pdf"); 
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
