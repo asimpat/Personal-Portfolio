@@ -5,7 +5,7 @@ import { Download } from "react-bootstrap-icons";
 import headerImg from "../assets/img/header-img.svg";
 
 export const Experience = () => {
-  const [experiences, setExperiences] = useState([]);
+  const [experiences, setExperiences] = useState([]); 
 
   useEffect(() => {
     axios
