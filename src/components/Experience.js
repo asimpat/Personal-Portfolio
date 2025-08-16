@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
 import { Download } from "react-bootstrap-icons";
-import headerImg from "../assets/img/header-img.svg";
+import headerImg from "../assets/img/header-img.svg"; 
 
 export const Experience = () => {
   const [experiences, setExperiences] = useState([]); 
