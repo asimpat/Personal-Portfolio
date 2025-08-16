@@ -27,7 +27,7 @@ export const Experience = () => {
               <h2>Experience</h2>
               <p>My professional journey in software development</p>
               <div className="experience-timeline">
-                {experiences.length > 0 ? (
+                {experiences.length > 0 ? ( 
                   experiences.map((exp, index) => (
                     <div key={index} className="experience-item">
                       <div className="experience-content">
