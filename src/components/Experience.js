@@ -52,7 +52,7 @@ export const Experience = () => {
                     </div>
                   ))
                 ) : (
-                  <p>Loading experiences...</p>
+                  <p>Loading experiences....</p>
                 )}
               </div>
               <div className="experience-cta">
