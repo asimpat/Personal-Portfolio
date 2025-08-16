@@ -11,7 +11,7 @@ export const Experience = () => {
     axios
       .get("http://localhost:8000/api/experiences/")
       .then((res) => {
-        // Handle both single object and array from backend
+        // Handle both single object and array from backend 
         const data = Array.isArray(res.data) ? res.data : [res.data];
         setExperiences(data);
       })
