@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
+import axios from "axios";
 
 export const Contact = () => {
   const formInitialDetails = {
@@ -27,20 +28,34 @@ export const Contact = () => {
     e.preventDefault();
     setButtonText("Sending...");
 
-    // Simulate form submission delay
-    setTimeout(() => {
-      setButtonText("Send");
-      setFormDetails(formInitialDetails);
-      setStatus({
-        success: true,
-        message: "Message sent successfully! Thank you for reaching out.",
+    try {
+      const response = await axios.post("http://127.0.0.1:8000/api/contacts/", {
+        first_name: formDetails.firstName,
+        last_name: formDetails.lastName,
+        email: formDetails.email,
+        phone: formDetails.phone,
+        message: formDetails.message,
       });
 
-      // Clear success message after 5 seconds
-      setTimeout(() => {
-        setStatus({});
-      }, 5000);
-    }, 1000);
+      if (response.status === 201) {
+        setStatus({
+          success: true,
+          message: "Message sent successfully! Thank you for reaching out.",
+        });
+        setFormDetails(formInitialDetails);
+      }
+    } catch (error) {
+      console.error("Error submitting contact form:", error);
+      setStatus({
+        success: false,
+        message: "Something went wrong. Please try again later.",
+      });
+    } finally {
+      setButtonText("Send");
+
+      // Clear message after 5s
+      setTimeout(() => setStatus({}), 5000);
+    }
   };
 
   return (
@@ -79,6 +94,7 @@ export const Contact = () => {
                           onChange={(e) =>
                             onFormUpdate("firstName", e.target.value)
                           }
+                          required
                         />
                       </Col>
                       <Col size={12} sm={6} className="px-1">
@@ -89,6 +105,7 @@ export const Contact = () => {
                           onChange={(e) =>
                             onFormUpdate("lastName", e.target.value)
                           }
+                          required
                         />
                       </Col>
                       <Col size={12} sm={6} className="px-1">
@@ -99,6 +116,7 @@ export const Contact = () => {
                           onChange={(e) =>
                             onFormUpdate("email", e.target.value)
                           }
+                          required
                         />
                       </Col>
                       <Col size={12} sm={6} className="px-1">
@@ -119,6 +137,7 @@ export const Contact = () => {
                           onChange={(e) =>
                             onFormUpdate("message", e.target.value)
                           }
+                          required
                         ></textarea>
                         <button type="submit">
                           <span>{buttonText}</span>
