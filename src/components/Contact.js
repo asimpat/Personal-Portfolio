@@ -38,11 +38,13 @@ export const Contact = () => {
       });
 
       if (response.status === 201) {
-        setStatus({
-          success: true,
-          message: "Message sent successfully! Thank you for reaching out.",
-        });
-        setFormDetails(formInitialDetails);
+         toast.success(
+           "Message sent successfully! Thank you for reaching out.",
+           {
+             position: "top-right",
+             autoClose: 3000,
+           }
+         );
       }
     } catch (error) {
       console.error("Error submitting contact form:", error);
