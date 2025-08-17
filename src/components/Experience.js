@@ -68,7 +68,7 @@ export const Experience = () => {
                   className="btn btn-primary"
                 >
                   Download CV{" "}
-                  <Download size={20} />
+                  <Download size={20} /> 
                 </button>
               </div>
             </div>
