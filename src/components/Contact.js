@@ -7,7 +7,6 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 export const Contact = () => {
   const formInitialDetails = {
     firstName: "",
@@ -26,8 +25,6 @@ export const Contact = () => {
     });
   };
 
-  toast.configure();
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
@@ -42,13 +39,15 @@ export const Contact = () => {
       });
 
       if (response.status === 201) {
-         toast.success(
-           "Message sent successfully! Thank you for reaching out.",
-           {
-             position: "top-right",
-             autoClose: 3000,
-           }
-         );
+        toast.success(
+          "Message sent successfully! Thank you for reaching out.",
+          {
+            position: "top-right",
+            autoClose: 3000,
+          }
+        );
+
+        setFormDetails(formInitialDetails); // reset form
       }
     } catch (error) {
       console.error("Error submitting contact form:", error);
@@ -146,7 +145,6 @@ export const Contact = () => {
                           <span>{buttonText}</span>
                         </button>
                       </Col>
-                      
                     </Row>
                   </form>
                 </div>
@@ -155,6 +153,9 @@ export const Contact = () => {
           </Col>
         </Row>
       </Container>
+
+    
+      <ToastContainer />
     </section>
   );
 };
