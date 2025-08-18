@@ -11,7 +11,7 @@ export const Banner = () => {
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const toRotate = useMemo(
-    () => ["Web Developer", "Web Designer", "UI/UX Designer"],
+    () => ["Backend Developer", "", "UI/UX Designer"],
     []
   );
   const period = 2000;
