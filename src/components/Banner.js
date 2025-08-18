@@ -11,7 +11,7 @@ export const Banner = () => {
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const toRotate = useMemo(
-    () => ["Backend Developer", "", "UI/UX Designer"],
+    () => ["Backend Developer", "FullStack Developer", "Web3 Enthusiast"],
     []
   );
   const period = 2000;
@@ -67,7 +67,7 @@ export const Banner = () => {
                     <span
                       className="txt-rotate"
                       dataPeriod="1000"
-                      data-rotate='[ "Backend Developer", "Web3 Enthusiast", "FullStack Developer" ]'
+                      data-rotate='[ "Backend Developer", "FullStack Developer", "Web3 Enthusiast" ]'
                     >
                       <span className="wrap">{text}</span>
                     </span>
