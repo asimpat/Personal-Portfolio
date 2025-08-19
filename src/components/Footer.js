@@ -37,13 +37,7 @@ export const Footer = () => {
               >
                 <img src={navIcon3} alt="Twitter" />
               </a>
-              <a
-                href="https://whatsapp.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={social} alt="whatsapp" />
-              </a>
+          
             </div>
             <p>Copyright 2022. All Rights Reserved</p>
           </Col>
