@@ -4,6 +4,7 @@ import logo from "../assets/img/logo.svg";
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
 import navIcon3 from "../assets/img/nav-icon3.svg";
+import navIcon4 from "../assets/img/nav-icon4.svg"
 import { HashLink } from "react-router-hash-link";
 
 export const NavBar = () => {
@@ -16,7 +17,7 @@ export const NavBar = () => {
         setScrolled(true);
       } else {
         setScrolled(false);
-      }
+      } 
     };
 
     window.addEventListener("scroll", onScroll);
@@ -85,7 +86,7 @@ export const NavBar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={navIcon1} alt="LinkedIn" /> 
+                <img src={navIcon1} alt="LinkedIn" />
               </a>
               <a
                 href="https://github.com"
@@ -100,6 +101,13 @@ export const NavBar = () => {
                 rel="noopener noreferrer"
               >
                 <img src={navIcon3} alt="Twitter" />
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={navIcon4} alt="Twitter" />
               </a>
             </div>
             <HashLink to="#connect">

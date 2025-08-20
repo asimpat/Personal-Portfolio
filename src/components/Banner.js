@@ -73,11 +73,14 @@ export const Banner = () => {
                     </span>
                   </h1>
                   <p>
-                    Lorem Ipsum is simply dummy text of the  and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book
+                    A passionate and inquisitive Software Engineer with a keen
+                    interest in software development, strategic problem-solving,
+                    and API design. Eager to contribute to innovative projects
+                    that connect today’s society with the technology of
+                    tomorrow. Seeking a dynamic software engineering role to
+                    leverage technical skills and creativity, while continuing
+                    to grow and expand a strong professional foundation in
+                    modern development practices.
                   </p>
                   {/* <button onClick={() => console.log("connect")}>
                     Let's Connect <ArrowRightCircle size={25} />
