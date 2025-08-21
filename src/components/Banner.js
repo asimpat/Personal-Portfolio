@@ -80,7 +80,7 @@ export const Banner = () => {
                     tomorrow. Seeking a dynamic software engineering role to
                     leverage technical skills and creativity, while continuing
                     to grow and expand a strong professional foundation in
-                    modern development practices.
+                    modern development practices. 
                   </p>
                   {/* <button onClick={() => console.log("connect")}>
                     Let's Connect <ArrowRightCircle size={25} />
