@@ -116,7 +116,7 @@ export const NavBar = () => {
               </button>
             </HashLink>
           </span>
-        </Navbar.Collapse>
+        </Navbar.Collapse> 
       </Container>
     </Navbar>
   );  

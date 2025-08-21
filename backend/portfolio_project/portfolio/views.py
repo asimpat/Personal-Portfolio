@@ -82,7 +82,7 @@ def get_experience(request):
         serializer = ExperienceSerializer(experience, many=True)
     return Response(serializer.data)
    elif request.method == 'POST':
-    serializer = ExperienceSerializer(data=request.data)
+    serializer = ExperienceSerializer(data=request.data) 
     if serializer.is_valid():
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
