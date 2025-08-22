@@ -23,7 +23,7 @@ export const ProjectCard = ({
 
   return (
     <Col size={12} sm={6} md={4}>
-      <div
+      <div 
         className={`proj-imgbx ${websiteUrl ? "clickable" : ""}`}
         onClick={websiteUrl ? handleWebsiteClick : undefined}
         style={{ cursor: websiteUrl ? "pointer" : "default" }}
