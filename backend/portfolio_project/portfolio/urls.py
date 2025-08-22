@@ -12,6 +12,6 @@ urlpatterns = [
     path('resumeUpload/', resume_upload, name='resume_upload'),
     path('skills/<int:pk>/', update_skill),
     path('projects/<int:pk>/', update_project),
-    path('experience/<int:pk>/', update_experience),
+    path('experience/<int:pk>/', update_experience), 
 
 ]

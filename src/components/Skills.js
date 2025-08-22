@@ -73,7 +73,7 @@ export const Skills = () => {
               >
                 {skills.length > 0 ? (
                   skills.map((skill, index) => (
-                    <div 
+                    <div  
                       key={index}
                       style={{
                         display: "flex",
