@@ -40,7 +40,7 @@ export const ProjectCard = ({
                 onClick={handleWebsiteClick}
                 title="View Live Site"
               >
-                <BoxArrowUpRight size={16} />
+                <BoxArrowUpRight size={16} /> 
                 <span>Live Site</span>
               </button>
               {githubUrl && (
