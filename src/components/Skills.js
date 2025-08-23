@@ -67,13 +67,13 @@ export const Skills = () => {
               <p>
                 These are my professional skills and their proficiency levels.
               </p>
-              <Carousel
+              <Carousel 
                 {...carouselSettings}
                 className="owl-carousel owl-theme skill-slider"
               >
-                {skills.length > 0 ? (
+                {skills.length > 0 ? ( 
                   skills.map((skill, index) => (
-                    <div  
+                    <div   
                       key={index}
                       style={{
                         display: "flex",

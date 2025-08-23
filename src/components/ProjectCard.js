@@ -17,11 +17,11 @@ export const ProjectCard = ({
   const handleGithubClick = (e) => {
     e.stopPropagation();
     if (githubUrl) {
-      window.open(githubUrl, "_blank", "noopener,noreferrer");
-    }
+      window.open(githubUrl, "_blank", "noopener,noreferrer"); 
+    } 
   };
 
-  return (
+  return ( 
     <Col size={12} sm={6} md={4}>
       <div 
         className={`proj-imgbx ${websiteUrl ? "clickable" : ""}`}
