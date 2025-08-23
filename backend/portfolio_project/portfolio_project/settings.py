@@ -135,6 +135,7 @@ MEDIA_ROOT = BASE_DIR/'media'
 
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
+    "https://personal-portfolio-ruddy-omega.vercel.app/",
     "http://localhost:3000",
     "http://127.0.0.1:3000",  
 ]
