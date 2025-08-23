@@ -17,7 +17,7 @@ export const ProjectCard = ({
   const handleGithubClick = (e) => {
     e.stopPropagation();
     if (githubUrl) {
-      window.open(githubUrl, "_blank", "noopener,noreferrer"); 
+      window.open(githubUrl, "_blank", "noopener,noreferrer");  
     } 
   };
 
