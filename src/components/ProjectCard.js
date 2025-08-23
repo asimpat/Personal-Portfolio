@@ -4,7 +4,7 @@ import { BoxArrowUpRight, Github } from "react-bootstrap-icons";
 export const ProjectCard = ({
   title,
   description,
-  imgUrl,
+  imgUrl, 
   websiteUrl,
   githubUrl,
 }) => {
