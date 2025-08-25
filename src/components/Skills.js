@@ -79,7 +79,7 @@ export const Skills = () => {
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
-                      }}
+                      }} 
                     >
                       <div style={{ width: 120, height: 120 }}>
                         <CircularProgressbar
@@ -89,11 +89,11 @@ export const Skills = () => {
                             textColor: "#fff",
                             pathColor: "#a020f0",
                             trailColor: "#333",
-                          })}
+                          })} 
                         />
                       </div>
                       <h5 style={{ marginTop: "10px", color: "#fff" }}>
-                        {skill.name}
+                        {skill.name} 
                       </h5>
                     </div>
                   ))
