@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 from decouple import config
 from datetime import timedelta
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,12 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-j#=-t!j&k-ir!oni#7wsvp$t1cg+i09y-t0==2nb(tuj1)-r^@'
+SECRET_KEY = config('SECRET_KEY', default='django-insecure-j#=-t!j&k-ir!oni#7wsvp$t1cg+i09y-t0==2nb(tuj1)-r^@')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1', cast=lambda v: [s.strip() for s in v.split(',')])
 
 
 # Application definition
@@ -80,16 +81,23 @@ WSGI_APPLICATION = 'portfolio_project.wsgi.application'
 
 
 # Database
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'portfolio_db',
-        'USER': 'root', 
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
-        'PORT': '3306'
+# Use PostgreSQL for production (Render), MySQL for local development
+if config('DATABASE_URL', default=None):
+    DATABASES = {
+        'default': dj_database_url.parse(config('DATABASE_URL'))
     }
-}
+else:
+    # Local development database (MySQL)
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'portfolio_db',
+            'USER': 'root', 
+            'PASSWORD': '',
+            'HOST': '127.0.0.1',
+            'PORT': '3306'
+        }
+    }
  
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -119,8 +127,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# WhiteNoise configuration for static files
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Media files
@@ -146,9 +157,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER =  'okonasim9@gmail.com'
-EMAIL_HOST_PASSWORD = 'wqmb uvmb qzti kqgj'        # App Password from Gmail
+EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='okonasim9@gmail.com')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='wqmb uvmb qzti kqgj')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-CONTACT_EMAIL = 'okon4488@gmail.com'
+CONTACT_EMAIL = config('CONTACT_EMAIL', default='okon4488@gmail.com')
 
 
