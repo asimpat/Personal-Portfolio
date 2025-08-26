@@ -26,7 +26,7 @@ export const Footer = () => {
               <a
                 href="https://github.com"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer" 
               >
                 <img src={navIcon2} alt="GitHub" /> 
               </a>
