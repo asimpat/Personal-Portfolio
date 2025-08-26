@@ -2,6 +2,9 @@
 # exit on error
 set -o errexit
 
+# Navigate to the Django project directory
+cd portfolio_project
+
 # Install dependencies
 pip install -r requirements.txt
 
