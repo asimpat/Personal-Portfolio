@@ -81,24 +81,15 @@ WSGI_APPLICATION = 'portfolio_project.wsgi.application'
 
 
 # Database
-# Use PostgreSQL for production (Render), MySQL for local development
+# Temporary SQLite for production deployment, MySQL for local development
 DATABASE_URL = config('DATABASE_URL', default=None)
 
-if DATABASE_URL:
-    # Production database (PostgreSQL via DATABASE_URL)
-    DATABASES = {
-        'default': dj_database_url.parse(DATABASE_URL)
-    }
-elif not DEBUG:
-    # Production fallback - use PostgreSQL if DEBUG=False but no DATABASE_URL
+if not DEBUG:
+    # Production - use SQLite (temporary solution)
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': config('DB_NAME', default='portfolio_db'),
-            'USER': config('DB_USER', default='portfolio_user'),
-            'PASSWORD': config('DB_PASSWORD', default=''),
-            'HOST': config('DB_HOST', default='localhost'),
-            'PORT': config('DB_PORT', default='5432'),
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
 else:

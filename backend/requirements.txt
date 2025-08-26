@@ -6,8 +6,7 @@ djangorestframework-simplejwt==5.3.0
 # Setuptools (required for pkg_resources)
 setuptools>=65.0.0
 
-# Database - PostgreSQL for production (Render free tier)
-psycopg[binary]==3.2.1
+# Database - SQLite for production (temporary), dj-database-url kept for future PostgreSQL
 dj-database-url==2.1.0
 
 # CORS and API 
