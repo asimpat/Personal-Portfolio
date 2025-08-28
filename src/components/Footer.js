@@ -35,7 +35,7 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={navIcon3} alt="Twitter" />
+                <img src={navIcon3} alt="Twitter" /> 
               </a>
           
             </div>
