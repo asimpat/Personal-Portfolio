@@ -2,7 +2,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { MailchimpForm } from "./MailchimpForm";
 import logo from "../assets/img/logo.svg";
 import navIcon1 from "../assets/img/nav-icon1.svg";
-import navIcon2 from "../assets/img/nav-icon2.svg";
+import github from "../assets/img/github.png";
 import navIcon3 from "../assets/img/nav-icon3.svg";
 
 export const Footer = () => {
@@ -28,7 +28,7 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer" 
               >
-                <img src={navIcon2} alt="GitHub" /> 
+                <img src={github} alt="GitHub" /> 
               </a>
               <a
                 href="https://twitter.com"
